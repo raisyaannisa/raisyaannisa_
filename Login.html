@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f5f2;
+            color: #333;
+            line-height: 1.6;
+            padding: 10px;
+        }
+        header, footer {
+            background-color: #c3edea;
+            padding: 15px 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        header h1, footer p {
+            color: #555;
+        }
+        nav {
+            margin: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: #333;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #007f7f;
+        }
+        main {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .book-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .book-gallery img {
+            width: 150px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form label {
+            margin-bottom: 5px;
+        }
+        form input, form select, form button {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        form button {
+            background-color: #007f7f;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #005f5f;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        table th {
+            background-color: #f4f4f4;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+            main {
+                width: 100%;
+            }
+            .book-gallery img {
+                width: 100px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Login</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="transaksi.html">Transaksi</a>
+        <a href="login.html">Login</a>
+    </nav>
+    <main>
+        <section id="login">
+            <h2>Masuk ke Akun Anda</h2>
+            <form>
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Masukkan username">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Masukkan password">
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Penjualan Buku Self-Improvement. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

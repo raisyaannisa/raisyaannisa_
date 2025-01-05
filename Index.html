@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Penjualan Buku Self-Improvement</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f5f2;
+            color: #333;
+            line-height: 1.6;
+            padding: 10px;
+        }
+        header, footer {
+            background-color: #c3edea;
+            padding: 15px 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        header h1, footer p {
+            color: #555;
+        }
+        nav {
+            margin: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: #333;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #007f7f;
+        }
+        main {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .book-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .book-gallery img {
+            width: 150px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form label {
+            margin-bottom: 5px;
+        }
+        form input, form select, form button {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        form button {
+            background-color: #007f7f;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #005f5f;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        table th {
+            background-color: #f4f4f4;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+            main {
+                width: 100%;
+            }
+            .book-gallery img {
+                width: 100px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Penjualan Buku Self-Improvement</h1>
+        <p>Temukan inspirasi dan motivasi hidup Anda di sini!</p>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#transaksi">Transaksi</a>
+        <a href="#login">Login</a>
+    </nav>
+    <main>
+        <section id="home">
+            <h2>Selamat Datang</h2>
+            <p>Website ini menyediakan berbagai buku self-improvement yang dapat membantu Anda meningkatkan kualitas hidup dan mencapai tujuan pribadi Anda.</p>
+            <div class="book-gallery">
+                <img src="WhatsApp Image 2025-01-05 at 3.16.58 PM (1).jpeg" alt="Buku 1">
+                <img src="WhatsApp Image 2025-01-05 at 3.16.58 PM (2).jpeg" alt="Buku 2">
+                <img src="WhatsApp Image 2025-01-05 at 3.16.58 PM.jpeg" alt="Buku 3">
+                <img src="WhatsApp Image 2025-01-05 at 3.16.59 PM.jpeg" alt="Buku 4">
+                <img src="WhatsApp Image 2025-01-05 at 4.17.32 PM.jpeg" alt="Buku 5">
+            </div>
+        </section>
+        <section id="transaksi">
+            <h2>Transaksi</h2>
+            <form id="transaksiForm">
+                <label for="nama">Nama Transaksi</label>
+                <input type="text" id="nama" placeholder="Masukkan nama transaksi">
+                <label for="jumlah">Jumlah</label>
+                <input type="number" id="jumlah" placeholder="Masukkan jumlah transaksi">
+                <label for="kategori">Kategori</label>
+                <select id="kategori">
+                    <option value="">Pilih Kategori</option>
+                    <option value="Buku">Buku</option>
+                    <option value="E-Book">E-Book</option>
+                </select>
+                <button type="button" onclick="simpanTransaksi()">Simpan</button>
+            </form>
+            <a href="#daftarTransaksi">Lihat Daftar Transaksi</a>
+        </section>
+        <section id="daftarTransaksi">
+            <h2>Daftar Transaksi</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama Transaksi</th>
+                        <th>Jumlah</th>
+                        <th>Kategori</th>
+                    </tr>
+                </thead>
+                <tbody id="transaksiTable">
+                    <!-- Data transaksi akan ditambahkan di sini -->
+                </tbody>
+            </table>
+        </section>
+        <section id="login">
+            <h2>Login</h2>
+            <form>
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Masukkan username">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Masukkan password">
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Penjualan Buku Self-Improvement. All Rights Reserved.</p>
+    </footer>
+    <script>
+        function simpanTransaksi() {
+            const nama = document.getElementById('nama').value;
+            const jumlah = document.getElementById('jumlah').value;
+            const kategori = document.getElementById('kategori').value;
+
+            if (!nama || !jumlah || !kategori) {
+                alert("Harap isi semua data transaksi!");
+                return;
+            }
+
+            const table = document.getElementById('transaksiTable');
+            const row = table.insertRow();
+            row.innerHTML = `
+                <td>${nama}</td>
+                <td>${jumlah}</td>
+                <td>${kategori}</td>
+            `;
+
+            document.getElementById('transaksiForm').reset();
+            alert("Transaksi berhasil disimpan!");
+        }
+    </script>
+</body>
+</html>
